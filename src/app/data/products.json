@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "UV Protection Sunglasses",
+    "brand": "SunShade",
+    "price": 15,
+    "rating": 4.7,
+    "stock": 10,
+    "description": "Stylish UV protection sunglasses perfect for summer outings. Blocks 99% of UVA and UVB rays to protect your eyes during sunny days.",
+    "image": "https://i.ibb.co/4pDNDk1/sunglasses.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 2,
+    "name": "Floral Summer Dress",
+    "brand": "BeachVibes",
+    "price": 35,
+    "rating": 4.5,
+    "stock": 15,
+    "description": "Lightweight and breathable floral dress perfect for beach days and summer outings. Made from 100% organic cotton.",
+    "image": "https://i.ibb.co/4pDNDk1/dress.jpg",
+    "category": "Clothing"
+  },
+  {
+    "id": 3,
+    "name": "SPF 50 Sunscreen Lotion",
+    "brand": "GlowGuard",
+    "price": 12,
+    "rating": 4.8,
+    "stock": 25,
+    "description": "Water-resistant SPF 50 sunscreen lotion that protects your skin from harmful UV rays. Suitable for all skin types.",
+    "image": "https://i.ibb.co/4pDNDk1/sunscreen.jpg",
+    "category": "Skincare"
+  },
+  {
+    "id": 4,
+    "name": "Beach Tote Bag",
+    "brand": "CoastalCo",
+    "price": 20,
+    "rating": 4.3,
+    "stock": 20,
+    "description": "Spacious and stylish beach tote bag with waterproof lining. Perfect for carrying all your beach essentials.",
+    "image": "https://i.ibb.co/4pDNDk1/totebag.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 5,
+    "name": "Cooling Face Mist",
+    "brand": "GlowGuard",
+    "price": 10,
+    "rating": 4.6,
+    "stock": 30,
+    "description": "Refreshing face mist with aloe vera and cucumber extract. Keeps your skin hydrated and cool all summer long.",
+    "image": "https://i.ibb.co/4pDNDk1/facemist.jpg",
+    "category": "Skincare"
+  },
+  {
+    "id": 6,
+    "name": "Inflatable Pool Float",
+    "brand": "SplashKing",
+    "price": 25,
+    "rating": 4.4,
+    "stock": 12,
+    "description": "Giant inflatable pool float in fun summer shapes. Made from durable PVC material, perfect for pool parties.",
+    "image": "https://i.ibb.co/4pDNDk1/poolfloat.jpg",
+    "category": "Beach & Pool"
+  },
+  {
+    "id": 7,
+    "name": "Straw Sun Hat",
+    "brand": "SunShade",
+    "price": 18,
+    "rating": 4.5,
+    "stock": 8,
+    "description": "Wide-brim straw sun hat with UPF 50+ protection. Stylish and functional for beach trips and outdoor events.",
+    "image": "https://i.ibb.co/4pDNDk1/hat.jpg",
+    "category": "Accessories"
+  },
+  {
+    "id": 8,
+    "name": "Waterproof Sandals",
+    "brand": "BeachVibes",
+    "price": 30,
+    "rating": 4.6,
+    "stock": 18,
+    "description": "Comfortable waterproof sandals with non-slip sole. Perfect for beach walks, pool areas, and casual summer outings.",
+    "image": "https://i.ibb.co/4pDNDk1/sandals.jpg",
+    "category": "Footwear"
+  }
+]
