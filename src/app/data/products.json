@@ -6,8 +6,8 @@
     "price": 15,
     "rating": 4.7,
     "stock": 10,
-    "description": "Stylish UV protection sunglasses perfect for summer outings. Blocks 99% of UVA and UVB rays to protect your eyes during sunny days.",
-    "image": "https://i.ibb.co/4pDNDk1/sunglasses.jpg",
+    "description": "Stylish UV protection sunglasses perfect for summer outings.",
+    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400",
     "category": "Accessories"
   },
   {
@@ -17,8 +17,8 @@
     "price": 35,
     "rating": 4.5,
     "stock": 15,
-    "description": "Lightweight and breathable floral dress perfect for beach days and summer outings. Made from 100% organic cotton.",
-    "image": "https://i.ibb.co/4pDNDk1/dress.jpg",
+    "description": "Lightweight and breathable floral dress perfect for beach days.",
+    "image": "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400",
     "category": "Clothing"
   },
   {
@@ -28,8 +28,8 @@
     "price": 12,
     "rating": 4.8,
     "stock": 25,
-    "description": "Water-resistant SPF 50 sunscreen lotion that protects your skin from harmful UV rays. Suitable for all skin types.",
-    "image": "https://i.ibb.co/4pDNDk1/sunscreen.jpg",
+    "description": "Water-resistant SPF 50 sunscreen lotion for all skin types.",
+    "image": "https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400",
     "category": "Skincare"
   },
   {
@@ -39,8 +39,8 @@
     "price": 20,
     "rating": 4.3,
     "stock": 20,
-    "description": "Spacious and stylish beach tote bag with waterproof lining. Perfect for carrying all your beach essentials.",
-    "image": "https://i.ibb.co/4pDNDk1/totebag.jpg",
+    "description": "Spacious and stylish beach tote bag with waterproof lining.",
+    "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400",
     "category": "Accessories"
   },
   {
@@ -50,8 +50,8 @@
     "price": 10,
     "rating": 4.6,
     "stock": 30,
-    "description": "Refreshing face mist with aloe vera and cucumber extract. Keeps your skin hydrated and cool all summer long.",
-    "image": "https://i.ibb.co/4pDNDk1/facemist.jpg",
+    "description": "Refreshing face mist with aloe vera and cucumber extract.",
+    "image": "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400",
     "category": "Skincare"
   },
   {
@@ -61,8 +61,8 @@
     "price": 25,
     "rating": 4.4,
     "stock": 12,
-    "description": "Giant inflatable pool float in fun summer shapes. Made from durable PVC material, perfect for pool parties.",
-    "image": "https://i.ibb.co/4pDNDk1/poolfloat.jpg",
+    "description": "Giant inflatable pool float made from durable PVC material.",
+    "image": "https://images.unsplash.com/photo-1521138054413-5a47d349b7c4?w=400",
     "category": "Beach & Pool"
   },
   {
@@ -72,8 +72,8 @@
     "price": 18,
     "rating": 4.5,
     "stock": 8,
-    "description": "Wide-brim straw sun hat with UPF 50+ protection. Stylish and functional for beach trips and outdoor events.",
-    "image": "https://i.ibb.co/4pDNDk1/hat.jpg",
+    "description": "Wide-brim straw sun hat with UPF 50+ protection.",
+    "image": "https://images.unsplash.com/photo-1529958030586-3aae4ca485ff?w=400",
     "category": "Accessories"
   },
   {
@@ -83,8 +83,8 @@
     "price": 30,
     "rating": 4.6,
     "stock": 18,
-    "description": "Comfortable waterproof sandals with non-slip sole. Perfect for beach walks, pool areas, and casual summer outings.",
-    "image": "https://i.ibb.co/4pDNDk1/sandals.jpg",
+    "description": "Comfortable waterproof sandals with non-slip sole.",
+    "image": "https://images.unsplash.com/photo-1603487742131-4160ec999306?w=400",
     "category": "Footwear"
   }
 ]
