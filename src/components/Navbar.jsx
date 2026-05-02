@@ -3,7 +3,6 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Sun } from "lucide-react";
 import { authClient } from "@/lib/auth-client";
-import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -55,40 +54,36 @@ const Navbar = () => {
         {isPending ? (
           <span className="loading loading-spinner loading-sm text-amber-400"></span>
         ) : user ? (
-          <div className="dropdown dropdown-end">
-            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-              <div className="w-9 rounded-full border-2 border-amber-400 overflow-hidden">
-                {user?.image ? (
-                  <Image
-                    src={user.image}
-                    alt={user.name}
-                    width={36}
-                    height={36}
-                    className="rounded-full w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-full bg-amber-400 flex items-center justify-center text-[#0f172a] font-bold text-sm">
-                    {user?.name?.charAt(0).toUpperCase()}
-                  </div>
-                )}
+          <div className="flex items-center gap-3">
+            {/* Hello Name */}
+            <span className="text-slate-300 text-sm hidden lg:block">
+              Hello, <span className="text-amber-400 font-semibold">{user?.name}</span>
+            </span>
+
+            {/* Avatar Dropdown */}
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className="w-9 h-9 rounded-full border-2 border-amber-400 bg-amber-400 flex items-center justify-center text-[#0f172a] font-bold text-sm">
+                  {user?.name?.charAt(0).toUpperCase()}
+                </div>
               </div>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-[#0f172a] border border-slate-700 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li className="px-3 py-2 text-slate-400 text-xs border-b border-slate-700 mb-1">{user?.name}</li>
+                <li>
+                  <Link href="/my-profile" className="text-slate-300 hover:text-amber-400">
+                    My Profile
+                  </Link>
+                </li>
+                <li>
+                  <button onClick={handleLogout} className="text-red-400 hover:text-red-300">
+                    Logout
+                  </button>
+                </li>
+              </ul>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-[#0f172a] border border-slate-700 rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              <li className="px-3 py-2 text-slate-400 text-xs border-b border-slate-700 mb-1">{user?.name}</li>
-              <li>
-                <Link href="/my-profile" className="text-slate-300 hover:text-amber-400">
-                  My Profile
-                </Link>
-              </li>
-              <li>
-                <button onClick={handleLogout} className="text-red-400 hover:text-red-300">
-                  Logout
-                </button>
-              </li>
-            </ul>
           </div>
         ) : (
           <>
