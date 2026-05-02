@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Sun } from "lucide-react";
+import { signIn } from "@/lib/auth-client";
 
 const LoginPage = () => {
   const {
@@ -14,9 +15,21 @@ const LoginPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   const handleLoginFunc = async (data) => {
-    console.log(data, "login data");
-    // BetterAuth connect হলে এখানে authClient আসবে
-  };
+  const { data: res, error } = await signIn.email({
+    email: data.email,
+    password: data.password,
+    rememberMe: true,
+    callbackURL: "/",
+  });
+
+  if (error) {
+    alert(error.message || "Something went wrong!");
+  }
+
+  if (res) {
+    alert("Login successful!");
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12">

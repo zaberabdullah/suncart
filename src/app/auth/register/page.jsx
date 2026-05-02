@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Sun } from "lucide-react";
+import { signUp } from "@/lib/auth-client";
 
 const RegisterPage = () => {
   const {
@@ -14,8 +15,21 @@ const RegisterPage = () => {
   const [isShowPassword, setIsShowPassword] = useState(false);
 
   const handleRegisterFunc = async (data) => {
-    console.log(data, "register data");
-    // BetterAuth connect হলে এখানে authClient আসবে
+    const { data: res, error } = await signUp.email({
+      email: data.email,
+      password: data.password,
+      name: data.name,
+      image: data.image,
+      callbackURL: "/auth/login",
+    });
+
+    if (error) {
+      alert(error.message || "Something went wrong!");
+    }
+
+    if (res) {
+      alert("Registration successful! Please login.");
+    }
   };
 
   return (
@@ -82,7 +96,7 @@ const RegisterPage = () => {
               })}
             />
             <span
-              className="absolute right-3 top-8 cursor-pointer text-slate-400"
+              className="absolute right-3 top-4 text-[16px] cursor-pointer"
               onClick={() => setIsShowPassword(!isShowPassword)}
             >
               {isShowPassword ? <FaEye /> : <FaEyeSlash />}
