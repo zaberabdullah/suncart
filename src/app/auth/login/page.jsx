@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Sun } from "lucide-react";
 import { authClient, signIn } from "@/lib/auth-client";
 import { useSearchParams } from "next/navigation";
 
-const LoginPage = () => {
+const LoginContent = () => {
   const {
     register,
     handleSubmit,
@@ -22,8 +22,8 @@ const LoginPage = () => {
     });
   };
 
-const searchParams = useSearchParams();
-const callbackUrl = searchParams.get('callbackUrl') || '/';
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get("callbackUrl") || "/";
 
   const handleLoginFunc = async (data) => {
     const { data: res, error } = await signIn.email({
@@ -120,4 +120,16 @@ const callbackUrl = searchParams.get('callbackUrl') || '/';
   );
 };
 
-export default LoginPage;
+export default function LoginPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          <span className="loading loading-spinner loading-lg text-amber-400"></span>
+        </div>
+      }
+    >
+      <LoginContent />
+    </Suspense>
+  );
+}

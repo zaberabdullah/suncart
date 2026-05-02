@@ -1,28 +1,26 @@
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 import Image from "next/image";
 import { StarIcon, ShieldCheck, Truck, RotateCcw, Package } from "lucide-react";
 import Link from "next/link";
-
 import products from "../../data/products.json";
 
 export default async function ProductDetails({ params }) {
+  // Session check
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    const productParams = await params;
+    redirect("/auth/login?callbackUrl=/products/" + productParams.id);
+  }
+
   const productParams = await params;
   const id = productParams.id;
-
   const product = products.find((p) => p.id == id);
 
-  //   if (!product) {
-  //     return (
-  //       <div className="min-h-screen flex flex-col items-center justify-center bg-white">
-  //         <h2 className="text-2xl font-bold text-gray-800 mb-4">Product not found!</h2>
-  //         <Link
-  //           href="/"
-  //           className="px-6 py-2 bg-gray-900 text-white rounded-xl hover:bg-orange-500 transition-all"
-  //         >
-  //           Back to Home
-  //         </Link>
-  //       </div>
-  //     );
-  //   }
 
   return (
     <main className="min-h-screen bg-white pb-20">
