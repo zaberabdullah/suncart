@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import "animate.css";
 
 const slides = [
   {
@@ -37,7 +38,7 @@ const HeroSlider = () => {
       {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
           <div className="relative h-[420px] bg-[#0f172a] rounded-2xl flex flex-col items-center justify-center text-center px-6 overflow-hidden">
-            <span className="bg-amber-400/20 text-white border border-amber-400/40 px-4 py-1 rounded-full text-sm font-medium mb-5">
+            <span className="bg-amber-400/20 text-white border border-amber-400/40 px-4 py-1 rounded-full text-sm font-medium mb-5 animate__animated animate__fadeInDown ...">
               {slide.badge}
             </span>
             <h1 className="text-2xl md:text-4xl font-medium text-white mb-4 drop-shadow-lg">{slide.title}</h1>
