@@ -34,12 +34,18 @@ Suncart is a modern, high-performance e-commerce platform built for the summer s
 Follow these steps to run the project locally:
 
 ### 1. Clone the repository
+
 ```bash
 git clone [https://github.com/zaberabdullah/suncart-8542.git](https://github.com/zaberabdullah/suncart-8542.git)
+
 cd suncart-8542
+
+
 2. Install dependencies
 Bash
 npm install
+
+
 3. Setup Environment Variables
 Create a .env.local file in the root directory and add the following:
 
@@ -50,10 +56,15 @@ BETTER_AUTH_URL=http://localhost:3000
 
 GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
+
+
+
 4. Run the development server
 Bash
 npm run dev
 Open http://localhost:3000 with your browser to see the result.
+
+
 
 📂 Project Structure
 /app: Contains all routes and layouts (App Router).
@@ -64,5 +75,3 @@ Open http://localhost:3000 with your browser to see the result.
 
 /data: Local JSON data for products and categories.
 
-📜 License
-Distributed under the MIT License.
