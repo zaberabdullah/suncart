@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Sun } from "lucide-react";
 import { authClient, signIn } from "@/lib/auth-client";
+import { useSearchParams } from "next/navigation";
 
 const LoginPage = () => {
   const {
@@ -21,12 +22,15 @@ const LoginPage = () => {
     });
   };
 
+const searchParams = useSearchParams();
+const callbackUrl = searchParams.get('callbackUrl') || '/';
+
   const handleLoginFunc = async (data) => {
     const { data: res, error } = await signIn.email({
       email: data.email,
       password: data.password,
       rememberMe: true,
-      callbackURL: "/",
+      callbackURL: callbackUrl,
     });
 
     if (error) {

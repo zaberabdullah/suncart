@@ -4,7 +4,9 @@ export async function middleware(request) {
   const sessionCookie = request.cookies.get("better-auth.session_token");
 
   if (!sessionCookie) {
-    return NextResponse.redirect(new URL('/auth/login', request.url));
+    const loginUrl = new URL('/auth/login', request.url);
+    loginUrl.searchParams.set('callbackUrl', request.nextUrl.pathname);
+    return NextResponse.redirect(loginUrl);
   }
 
   return NextResponse.next();

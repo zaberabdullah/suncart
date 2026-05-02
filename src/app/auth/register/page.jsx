@@ -129,7 +129,7 @@ const RegisterPage = () => {
           >
             <span className="font-bold text-amber-500">G</span>
             Continue with Google
-          </button>
+          </button>    
         </form>
 
         {/* Login Link */}
