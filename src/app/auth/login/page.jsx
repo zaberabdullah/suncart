@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Sun } from "lucide-react";
-import { signIn } from "@/lib/auth-client";
+import { authClient, signIn } from "@/lib/auth-client";
 
 const LoginPage = () => {
   const {
@@ -14,22 +14,29 @@ const LoginPage = () => {
   } = useForm();
   const [isShowPassword, setIsShowPassword] = useState(false);
 
+  const handleGoogleLogin = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+  };
+
   const handleLoginFunc = async (data) => {
-  const { data: res, error } = await signIn.email({
-    email: data.email,
-    password: data.password,
-    rememberMe: true,
-    callbackURL: "/",
-  });
+    const { data: res, error } = await signIn.email({
+      email: data.email,
+      password: data.password,
+      rememberMe: true,
+      callbackURL: "/",
+    });
 
-  if (error) {
-    alert(error.message || "Something went wrong!");
-  }
+    if (error) {
+      alert(error.message || "Something went wrong!");
+    }
 
-  if (res) {
-    alert("Login successful!");
-  }
-};
+    if (res) {
+      alert("Login successful!");
+    }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center py-12">
@@ -87,7 +94,11 @@ const LoginPage = () => {
           </div>
 
           {/* Google Button */}
-          <button className="btn w-full bg-white border border-slate-200 text-[#0f172a] hover:bg-slate-50 gap-2">
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="btn w-full bg-white border border-slate-200 text-[#0f172a] hover:bg-slate-50 gap-2"
+          >
             <span className="font-bold text-amber-500">G</span>
             Continue with Google
           </button>

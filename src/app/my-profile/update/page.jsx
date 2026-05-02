@@ -2,7 +2,6 @@
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { Sun } from "lucide-react";
 
 export default function UpdateProfilePage() {
   const router = useRouter();
@@ -40,12 +39,6 @@ export default function UpdateProfilePage() {
   return (
     <div className="min-h-screen flex items-center justify-center py-12">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8 border border-slate-100">
-        {/* Logo */}
-        <div className="flex items-center justify-center gap-2 mb-6">
-          <Sun className="w-7 h-7 text-amber-400" />
-          <span className="text-2xl font-extrabold text-[#0f172a]">SunCart</span>
-        </div>
-
         {/* Title */}
         <h2 className="text-xl font-bold text-[#0f172a] text-center mb-1">Update Profile</h2>
         <p className="text-slate-400 text-sm text-center mb-6">Update your name and photo</p>

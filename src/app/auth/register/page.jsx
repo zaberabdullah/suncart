@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Sun } from "lucide-react";
-import { signUp } from "@/lib/auth-client";
+import { authClient, signUp } from "@/lib/auth-client";
 
 const RegisterPage = () => {
   const {
@@ -13,6 +13,13 @@ const RegisterPage = () => {
     formState: { errors },
   } = useForm();
   const [isShowPassword, setIsShowPassword] = useState(false);
+
+  const handleGoogleLogin = async () => {
+    await authClient.signIn.social({
+      provider: "google",
+      callbackURL: "/",
+    });
+  };
 
   const handleRegisterFunc = async (data) => {
     const { data: res, error } = await signUp.email({
@@ -115,7 +122,11 @@ const RegisterPage = () => {
           </div>
 
           {/* Google Button */}
-          <button className="btn w-full bg-white border border-slate-200 text-[#0f172a] hover:bg-slate-100 gap-2">
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            className="btn w-full bg-white border border-slate-200 text-[#0f172a] hover:bg-slate-100 gap-2"
+          >
             <span className="font-bold text-amber-500">G</span>
             Continue with Google
           </button>
