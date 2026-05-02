@@ -1,17 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import HeroSlider from "@/components/HeroSlider";
-import { Glasses, Shirt, Sparkles, StarIcon, Waves } from "lucide-react";
+import { StarIcon } from "lucide-react";
 import TopBrands from "@/components/TopBrands";
-
-async function getProducts() {
-  const res = await fetch("http://localhost:3000/api/products");
-  return res.json();
-}
+import productsData from "./data/products.json";
 
 export default async function Home() {
-  const products = await getProducts();
-  const popularProducts = products.slice(0, 3);
+  const popularProducts = productsData.slice(0, 3);
 
   return (
     <main className="py-6">
@@ -102,7 +97,7 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* extra section/ top brands */}
+      {/* Top Brands */}
       <TopBrands />
     </main>
   );
