@@ -1,77 +1,126 @@
-# 🛒 Suncart - Premium Summer E-commerce
+# ☀️ SunCart – Summer Essentials Store
 
-Suncart is a modern, high-performance e-commerce platform built for the summer season. It features a sleek UI, robust authentication, and dynamic product management, providing a seamless shopping experience.
+A modern summer eCommerce platform where users can explore and purchase seasonal products like sunglasses, summer outfits, skincare, beach accessories, and more.
 
-**🌐 Live Demo:** [https://suncart-8542.vercel.app/](https://suncart-8542.vercel.app/)
+## 🌐 Live URL
 
----
+[https://suncart-8542.vercel.app](https://suncart-8542.vercel.app)
+
+## 🎯 Project Purpose
+
+SunCart is a full-stack eCommerce web application built with Next.js. Users can browse summer products, view detailed product information (after authentication), and manage their profile. The platform features secure authentication with email/password and Google OAuth.
 
 ## ✨ Key Features
 
-*   **Secure Authentication**: Fully integrated social (Google) and email/password login using **BetterAuth**.
-*   **Dynamic Product Details**: Personalized product pages with real-time data fetching from JSON/MongoDB.
-*   **Protected Routes**: Sensitive pages like Product Details and User Profiles are guarded by auth middleware/logic.
-*   **Premium UI/UX**: Built with **Tailwind CSS 4** and **DaisyUI**, featuring a minimalistic and eye-friendly design.
-*   **Smooth Animations**: Enhanced user interaction with **Animate.css** for a lively feel.
-*   **Interactive Sliders**: Optimized product showcases using **Swiper.js**.
-*   **Responsive Design**: Completely mobile-friendly layout for shopping on any device.
-
----
+- **Hero Slider** — Animated banner with summer sale offers
+- **Popular Products** — Display of top 3 featured summer products
+- **All Products Page** — Browse the full summer collection
+- **Product Details Page** — Protected route, only accessible after login
+- **Authentication** — Email/password login & Google OAuth via BetterAuth
+- **User Profile** — View and update profile name and photo
+- **Summer Care Tips** — Helpful tips for summer skincare and health
+- **Top Brands** — Showcase of featured summer brands
+- **Responsive Design** — Fully responsive on mobile, tablet, and desktop
+- **Animations** — Smooth animations using Animate.css
 
 ## 🛠️ Tech Stack
 
-*   **Frontend**: Next.js 16 (App Router), React 19
-*   **Styling**: Tailwind CSS 4, DaisyUI v5
-*   **Authentication**: BetterAuth with MongoDB Adapter
-*   **Database**: MongoDB
-*   **Icons**: Lucide React & React Icons
-*   **Animations**: Animate.css
+- **Framework:** Next.js 16 (App Router)
+- **Styling:** Tailwind CSS + DaisyUI
+- **Authentication:** BetterAuth
+- **Database:** MongoDB Atlas
+- **Deployment:** Vercel
 
----
+## 📦 NPM Packages Used
+
+| Package | Purpose |
+|---|---|
+| `better-auth` | Authentication (email + Google OAuth) |
+| `mongodb` | MongoDB database adapter |
+| `swiper` | Hero slider component |
+| `animate.css` | CSS animations |
+| `react-hook-form` | Form validation |
+| `react-icons` | Icon library |
+| `lucide-react` | Icon library |
+| `daisyui` | UI component library |
 
 ## 🚀 Getting Started
 
-Follow these steps to run the project locally:
+### Prerequisites
+- Node.js 18+
+- MongoDB Atlas account
+- Google OAuth credentials
 
-### 1. Clone the repository
+### Installation
 
 ```bash
-git clone [https://github.com/zaberabdullah/suncart-8542.git](https://github.com/zaberabdullah/suncart-8542.git)
+# Clone the repository
+git clone https://github.com/your-username/suncart.git
 
-cd suncart-8542
+# Navigate to project directory
+cd suncart
 
-
-2. Install dependencies
-Bash
+# Install dependencies
 npm install
 
+# Create .env.local file
+cp .env.example .env.local
 
-3. Setup Environment Variables
-Create a .env.local file in the root directory and add the following:
-
-Code snippet
-MONGODB_URI=your_mongodb_connection_string
-BETTER_AUTH_SECRET=your_secret_key
-BETTER_AUTH_URL=http://localhost:3000
-
-GOOGLE_CLIENT_ID=your_google_client_id
-GOOGLE_CLIENT_SECRET=your_google_client_secret
-
-
-
-4. Run the development server
-Bash
+# Run development server
 npm run dev
-Open http://localhost:3000 with your browser to see the result.
+```
 
+### Environment Variables
 
+Create a `.env.local` file in the root directory:
 
-📂 Project Structure
-/app: Contains all routes and layouts (App Router).
+```env
+MONGO_URI=your-mongodb-connection-string
+BETTER_AUTH_SECRET=your-secret-key
+BETTER_AUTH_URL=http://localhost:3000
+NEXT_PUBLIC_BETTER_AUTH_URL=http://localhost:3000
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+```
 
-/components: Reusable UI components (Navbar, NewsCard, Sidebars).
+## 📁 Project Structure
 
-/lib: Core logic including BetterAuth configuration and data fetching.
+```
+src/
+├── app/
+│   ├── api/
+│   │   ├── auth/[...all]/    # BetterAuth API routes
+│   │   └── products/         # Products API route
+│   ├── auth/
+│   │   ├── login/            # Login page
+│   │   └── register/         # Register page
+│   ├── my-profile/
+│   │   ├── update/           # Update profile page
+│   │   └── page.jsx          # Profile page
+│   ├── products/
+│   │   ├── [id]/             # Product details (protected)
+│   │   └── page.jsx          # All products page
+│   ├── data/
+│   │   └── products.json     # Product data
+│   └── page.js               # Home page
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── HeroSlider.jsx
+│   └── TopBrands.jsx
+└── lib/
+    ├── auth.js               # BetterAuth config
+    └── auth-client.js        # BetterAuth client
+```
 
-/data: Local JSON data for products and categories.
+## 🔒 Authentication Flow
 
+- Users can register with email/password or Google OAuth
+- Product details page is protected — login required to access
+- After login, users are redirected back to the page they tried to visit
+- User session is managed via BetterAuth with MongoDB
+
+## 👨‍💻 Author
+
+**Zaber Abdullah**
+- GitHub: [@zaberabdullah](https://github.com/zaberabdullah)
